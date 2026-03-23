@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESLint 한국어 가이드</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <style>
+    /* 랜딩 전용 스타일 */
+    .hero {
+      background: var(--color-bg-secondary);
+      border-bottom: 1px solid var(--color-border);
+      padding: 4rem 3rem 3.5rem calc(var(--sidebar-width) + 3rem);
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.8rem;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: var(--color-muted);
+      max-width: 560px;
+      margin-bottom: 1.8rem;
+      line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: var(--font);
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-primary {
+      background: var(--color-primary);
+      color: #fff;
+      border: 1px solid var(--color-primary);
+    }
+    .btn-primary:hover { background: var(--color-primary-hover); text-decoration: none; }
+    .btn-secondary {
+      background: var(--color-bg);
+      color: var(--color-text);
+      border: 1px solid var(--color-border);
+    }
+    .btn-secondary:hover { border-color: #aaa; text-decoration: none; }
+
+    .docs-section {
+      padding: 2.5rem 3rem;
+      padding-left: calc(var(--sidebar-width) + 3rem);
+      max-width: calc(var(--sidebar-width) + 820px);
+    }
+    .docs-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--color-muted);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      display: block;
+      padding: 1.2rem 1.3rem;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      text-decoration: none;
+      color: inherit;
+      background: var(--color-bg);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .card:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 8px rgba(61,115,214,0.08);
+      text-decoration: none;
+    }
+    .card.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: default;
+    }
+    .card-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-primary);
+      margin-bottom: 0.4rem;
+    }
+    .card-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .card-desc { font-size: 0.82rem; color: var(--color-muted); line-height: 1.5; }
+
+    .notice {
+      margin: 0 3rem 2rem calc(var(--sidebar-width) + 3rem);
+      padding: 1rem 1.2rem;
+      background: #fff8e6;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.88rem;
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+    .notice a { color: var(--color-primary); }
+
+    @media (max-width: 768px) {
+      .hero, .docs-section { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .notice { margin-left: 1.2rem; margin-right: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header class="site-header">
+  <div class="header-left">
+    <a href="index.html" class="site-logo">ESLint<span>-KO</span></a>
+    <div class="header-search">
+      <span style="color:#666; font-size:0.8rem;">🔍</span>
+      <input type="text" placeholder="문서 검색...">
+    </div>
+  </div>
+  <nav class="header-nav">
+    <a href="index.html" class="active">가이드</a>
+    <a href="#">Rules 레퍼런스</a>
+    <a href="#">플러그인</a>
+    <a href="https://github.com/eslint/eslint.org/issues/911" target="_blank">GitHub</a>
+  </nav>
+</header>
+
+<!-- 레이아웃 -->
+<div class="layout">
+
+  <!-- 사이드바 -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">시작하기</div>
+      <a href="index.html" class="sidebar-link active">홈</a>
+      <a href="docs/getting-started/01-intro.html" class="sidebar-link">ESLint란?</a>
+      <a href="docs/getting-started/02-installation.html" class="sidebar-link disabled">설치하기 <span class="badge-wip">작성 중</span></a>
+      <a href="docs/getting-started/03-first-config.html" class="sidebar-link disabled">첫 설정 <span class="badge-wip">작성 중</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">핵심 개념</div>
+      <a href="#" class="sidebar-link disabled">규칙 (Rules) <span class="badge-wip">작성 중</span></a>
+      <a href="#" class="sidebar-link disabled">설정 파일 <span class="badge-wip">작성 중</span></a>
+      <a href="#" class="sidebar-link disabled">파서 (Parser) <span class="badge-wip">작성 중</span></a>
+      <a href="#" class="sidebar-link disabled">플러그인 <span class="badge-wip">작성 중</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">실전 가이드</div>
+      <a href="#" class="sidebar-link disabled">React 프로젝트 <span class="badge-wip">작성 중</span></a>
+      <a href="#" class="sidebar-link disabled">TypeScript 설정 <span class="badge-wip">작성 중</span></a>
+      <a href="#" class="sidebar-link disabled">Prettier와 함께 쓰기 <span class="badge-wip">작성 중</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">기여하기</div>
+      <a href="#" class="sidebar-link">기여 가이드</a>
+      <a href="#" class="sidebar-link">용어 통일 기준</a>
+    </div>
+  </aside>
+
+  <!-- 본문 -->
+  <main>
+
+    <!-- 히어로 -->
+    <section class="hero">
+      <h1>ESLint 한국어 가이드</h1>
+      <p>
+        ESLint 공식 사이트에는 한국어가 없습니다.<br>
+        이 사이트는 한국 개발자를 위해 커뮤니티가 직접 만든 실전 가이드입니다.
+      </p>
+      <div class="hero-btns">
+        <a href="docs/getting-started/01-intro.html" class="btn btn-primary">시작하기</a>
+        <a href="https://github.com" target="_blank" class="btn btn-secondary">GitHub에서 기여하기</a>
+      </div>
+    </section>
+
+    <!-- 안내 -->
+    <div class="notice">
+      ⚠️ 이 프로젝트는 현재 초기 단계입니다. 문서가 작성 중인 항목이 많습니다.
+      <a href="#">기여 가이드</a>를 읽고 함께 만들어 주세요!
+    </div>
+
+    <!-- 시작하기 -->
+    <section class="docs-section">
+      <h2>시작하기</h2>
+      <div class="card-grid">
+        <a href="docs/getting-started/01-intro.html" class="card">
+          <div class="card-num">01</div>
+          <div class="card-title">ESLint란?</div>
+          <div class="card-desc">ESLint의 개념, 왜 써야 하는지, Prettier와의 차이</div>
+        </a>
+        <a href="#" class="card disabled">
+          <div class="card-num">02</div>
+          <div class="card-title">설치하기</div>
+          <div class="card-desc">npm으로 설치하고 VS Code 익스텐션 연결하기</div>
+        </a>
+        <a href="#" class="card disabled">
+          <div class="card-num">03</div>
+          <div class="card-title">첫 설정</div>
+          <div class="card-desc">eslint.config.mjs 파일 처음 만들어보기</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 핵심 개념 -->
+    <section class="docs-section" style="padding-top:0">
+      <h2>핵심 개념</h2>
+      <div class="card-grid">
+        <a href="#" class="card disabled">
+          <div class="card-num">04</div>
+          <div class="card-title">규칙 (Rules)</div>
+          <div class="card-desc">실무에서 꼭 알아야 할 규칙 모음</div>
+        </a>
+        <a href="#" class="card disabled">
+          <div class="card-num">05</div>
+          <div class="card-title">설정 파일 완전 정복</div>
+          <div class="card-desc">extends, plugins, env 개념 완전 이해</div>
+        </a>
+        <a href="#" class="card disabled">
+          <div class="card-num">06</div>
+          <div class="card-title">플러그인 활용</div>
+          <div class="card-desc">React, TypeScript 플러그인 실전 적용</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- 푸터 -->
+<footer class="site-footer">
+  <span>ESLint-KO · 커뮤니티 한국어 가이드 · MIT License</span>
+  <span>
+    <a href="https://github.com" target="_blank">GitHub에서 기여하기</a>
+    &nbsp;·&nbsp;
+    <a href="#">기여 가이드</a>
+  </span>
+</footer>
+
+</body>
+</html>
