@@ -18,6 +18,7 @@ export function Main() {
           <a
             href="https://github.com/DoHyuk-Centric/eslint-kr"
             target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-secondary"
           >
             GitHub에서 기여하기
