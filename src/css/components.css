@@ -25,6 +25,11 @@
 }
 .article li { margin-bottom: 0.3rem; }
 
+.no-bullet {
+  list-style: none;
+  padding-left: 0;
+}
+
 /* ── 인라인 코드 ── */
 .article code,
 p > code,
@@ -33,7 +38,6 @@ td > code {
   font-family: var(--font-mono);
   font-size: 0.83em;
   background: #f0f0f0;
-  border: 1px solid #e0e0e0;
   border-radius: 3px;
   padding: 0.1em 0.4em;
   color: #c7254e;
@@ -88,6 +92,23 @@ td > code {
   margin: 0;
 }
 
+.code-block code {
+  display: block;
+  white-space: pre;
+
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  line-height: 1.7;
+
+  color: #d4d4d4;
+  background-color: #1e1e1e;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  tab-size: 2;
+}
+
 /* 문법 강조 토큰 */
 .tk-kw  { color: #569cd6; }   /* 키워드: const, let, import */
 .tk-fn  { color: #dcdcaa; }   /* 함수 이름 */
@@ -95,7 +116,7 @@ td > code {
 .tk-cmt { color: #6a9955; }   /* 주석 */
 .tk-num { color: #b5cea8; }   /* 숫자 */
 .tk-key { color: #9cdcfe; }   /* 변수/프로퍼티 */
-.tk-err { color: #f44747; text-decoration: underline wavy #f44747; }
+.tk-err { text-decoration: underline wavy #f44747; }
 .tk-ok  { color: #4ec9b0; }   /* 성공/강조 */
 .tk-prop { color: #4fc1ff; }  /* 객체 프로퍼티 */
 

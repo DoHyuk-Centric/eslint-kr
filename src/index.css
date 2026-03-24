@@ -196,6 +196,7 @@ a:hover { text-decoration: underline; }
 /* 이전/다음 내비게이션 */
 .doc-nav {
   display: flex;
+  justify-content: space-between;
   gap: 1rem;
   margin-top: 3rem;
   padding-top: 1.5rem;

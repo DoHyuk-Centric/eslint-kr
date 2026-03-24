@@ -16,7 +16,7 @@ export function Main() {
             시작하기
           </Link>
           <a
-            href="https://github.com"
+            href="https://github.com/DoHyuk-Centric/eslint-kr"
             target="_blank"
             className="btn btn-secondary"
           >
