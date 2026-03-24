@@ -20,7 +20,7 @@ export default function Intro() {
   return (
     <div className="main-content">
       <nav className="breadcrumb">
-        <NavLink to="/">ESLint-KO</NavLink>
+        <NavLink to="/">ESLint-KR</NavLink>
         <span className="breadcrumb-sep">›</span>
         <span>시작하기</span>
         <span className="breadcrumb-sep">›</span>
@@ -33,7 +33,9 @@ export default function Intro() {
           ESLint는 JavaScript 코드에서 문제를 찾아내고 수정 방향을 알려주는 정적
           분석 도구입니다.
         </p>
-        <a href="https://eslint.org/" target="_blank" rel="noopener noreferrer">공식 홈페이지</a>
+        <a href="https://eslint.org/" target="_blank" rel="noopener noreferrer">
+          공식 홈페이지
+        </a>
       </div>
 
       <article className="article">
@@ -63,20 +65,19 @@ export default function Intro() {
           </div>
           <pre>
             <code>
-              <code>
-                <span className="tk-kw">function</span>{" "}
-                <span className="tk-fn">greet</span>(<span className="tk-kw tk-err">name</span>) {"{"}
-                {"\n  "}
-                <span className="tk-kw">console</span>.log(
-                <span className="tk-str">"Hello, "</span> +{" "}
-                <span className="tk-key tk-err">userName</span>
-                );
-                {"\n}"}
-                {"\n\n"}
-                <span className="tk-fn">greet(</span>
-                <span className="tk-str">"김린트"</span>
-                <span className="tk-fn">)</span>;
-              </code>
+              <span className="tk-kw">function</span>{" "}
+              <span className="tk-fn">greet</span>(
+              <span className="tk-kw tk-err">name</span>) {"{"}
+              {"\n  "}
+              <span className="tk-kw">console</span>.log(
+              <span className="tk-str">"Hello, "</span> +{" "}
+              <span className="tk-key tk-err">userName</span>
+              );
+              {"\n}"}
+              {"\n\n"}
+              <span className="tk-fn">greet(</span>
+              <span className="tk-str">"김린트"</span>
+              <span className="tk-fn">)</span>;
             </code>
           </pre>
         </div>
