@@ -1,5 +1,16 @@
-function greet(name) {
-  console.log("Hello, " + userName);
-}
+import { defineConfig } from "eslint/config";
+import js from "@eslint/js";
 
-greet("김린트");
+export default defineConfig([
+	{
+		files: ["**/*.js"],
+		plugins: {
+			js,
+		},
+		extends: ["js/recommended"],
+		rules: {
+			"no-unused-vars": "warn",
+			"no-undef": "warn",
+		},
+	},
+]);

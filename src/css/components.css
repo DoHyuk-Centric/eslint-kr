@@ -18,12 +18,16 @@
   font-weight: 700;
   margin: 1.8rem 0 0.6rem;
 }
-.article p { margin-bottom: 1rem; }
+.article p {
+  margin-bottom: 1rem;
+}
 .article ul,
 .article ol {
   margin: 0.6rem 0 1rem 1.4rem;
 }
-.article li { margin-bottom: 0.3rem; }
+.article li {
+  margin-bottom: 0.3rem;
+}
 
 .no-bullet {
   list-style: none;
@@ -62,11 +66,24 @@ td > code {
   border-bottom: 1px solid #333;
 }
 
+.code-block-header.is-tabs {
+  justify-content: flex-start;
+  gap: 8px;
+}
+
 .code-lang {
+  all: unset;
+  cursor: pointer;
   font-size: 0.7rem;
   color: #888;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 2px 8px;
+}
+
+.code-lang.active {
+  color: #3d73d6;
+  font-weight: 600;
 }
 
 .copy-btn {
@@ -78,10 +95,18 @@ td > code {
   padding: 0.15rem 0.55rem;
   cursor: pointer;
   font-family: var(--font);
-  transition: color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
 }
-.copy-btn:hover { color: #ccc; border-color: #666; }
-.copy-btn.copied { color: #4caf50; border-color: #4caf50; }
+.copy-btn:hover {
+  color: #ccc;
+  border-color: #666;
+}
+.copy-btn.copied {
+  color: #4caf50;
+  border-color: #4caf50;
+}
 
 .code-block pre {
   padding: 1.1rem 1.2rem;
@@ -110,15 +135,36 @@ td > code {
 }
 
 /* 문법 강조 토큰 */
-.tk-kw  { color: #569cd6; }   /* 키워드: const, let, import */
-.tk-fn  { color: #dcdcaa; }   /* 함수 이름 */
-.tk-str { color: #ce9178; }   /* 문자열 */
-.tk-cmt { color: #6a9955; }   /* 주석 */
-.tk-num { color: #b5cea8; }   /* 숫자 */
-.tk-key { color: #9cdcfe; }   /* 변수/프로퍼티 */
-.tk-err { text-decoration: underline wavy #f44747; }
-.tk-ok  { color: #4ec9b0; }   /* 성공/강조 */
-.tk-prop { color: #4fc1ff; }  /* 객체 프로퍼티 */
+.tk-kw {
+  color: #569cd6;
+} /* 키워드: const, let */
+.tk-kw-import {
+  color: #c586c0;
+} /* 키워드: import, export */
+.tk-fn {
+  color: #dcdcaa;
+} /* 함수 이름 */
+.tk-str {
+  color: #ce9178;
+} /* 문자열 */
+.tk-cmt {
+  color: #6a9955;
+} /* 주석 */
+.tk-num {
+  color: #b5cea8;
+} /* 숫자 */
+.tk-key {
+  color: #9cdcfe;
+} /* 변수/프로퍼티 */
+.tk-err {
+  text-decoration: underline wavy #f44747;
+}
+.tk-ok {
+  color: #4ec9b0;
+} /* 성공/강조 */
+.tk-prop {
+  color: #4fc1ff;
+} /* 객체 프로퍼티 */
 
 /* ── 콜아웃 박스 ── */
 .callout {
@@ -133,7 +179,11 @@ td > code {
   border-left-style: solid;
   border-radius: 0 4px 4px 0;
 }
-.callout-icon { font-size: 0.95rem; flex-shrink: 0; margin-top: 0.15rem; }
+.callout-icon {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
 .callout strong {
   display: block;
   font-size: 0.72rem;
@@ -146,25 +196,33 @@ td > code {
   background: #eef3fc;
   border-left-color: #3d73d6;
 }
-.callout-note strong { color: #3d73d6; }
+.callout-note strong {
+  color: #3d73d6;
+}
 
 .callout-tip {
   background: #edf7ee;
   border-left-color: #4caf50;
 }
-.callout-tip strong { color: #2e7d32; }
+.callout-tip strong {
+  color: #2e7d32;
+}
 
 .callout-warn {
   background: #fff8e6;
   border-left-color: #f59e0b;
 }
-.callout-warn strong { color: #b45309; }
+.callout-warn strong {
+  color: #b45309;
+}
 
 .callout-danger {
   background: #fef2f2;
   border-left-color: #ef4444;
 }
-.callout-danger strong { color: #b91c1c; }
+.callout-danger strong {
+  color: #b91c1c;
+}
 
 /* ── 표 ── */
 .article table {
@@ -186,11 +244,77 @@ td > code {
   padding: 0.6rem 0.9rem;
   vertical-align: top;
 }
-.article tr:nth-child(even) td { background: var(--color-bg-secondary); }
+.article tr:nth-child(even) td {
+  background: var(--color-bg-secondary);
+}
 
 /* ── 구분선 ── */
 .article hr {
   border: none;
   border-top: 1px solid var(--color-border);
   margin: 2rem 0;
+}
+
+/*  ── 노트 ── */
+.docs-notice {
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  background: #fff8e6;
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* 토스트 컨테이너 (여러 개 쌓일 때 대비) */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  z-index: 9999;
+}
+
+/* 토스트 기본 스타일 */
+.toast {
+  background: #1e1e1e;
+  color: #fff;
+
+  padding: 12px 16px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  transform: translateY(10px);
+
+  animation: toast-in 0.25s ease forwards;
+}
+
+/* 등장 애니메이션 */
+@keyframes toast-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 사라질 때 (선택) */
+.toast.hide {
+  animation: toast-out 0.2s ease forwards;
+}
+
+@keyframes toast-out {
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
