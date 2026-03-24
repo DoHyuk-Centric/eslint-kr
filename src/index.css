@@ -196,6 +196,7 @@ a:hover { text-decoration: underline; }
 /* 이전/다음 내비게이션 */
 .doc-nav {
   display: flex;
+  justify-content: space-between;
   gap: 1rem;
   margin-top: 3rem;
   padding-top: 1.5rem;
@@ -203,6 +204,7 @@ a:hover { text-decoration: underline; }
 }
 .doc-nav-btn {
   display: flex;
+  text-align: center;
   flex-direction: column;
   padding: 0.8rem 1.1rem;
   border: 1px solid var(--color-border);
@@ -219,7 +221,6 @@ a:hover { text-decoration: underline; }
 }
 .doc-nav-label { font-size: 0.72rem; color: var(--color-muted); margin-bottom: 0.2rem; }
 .doc-nav-title { font-size: 0.9rem; font-weight: 700; color: var(--color-primary); }
-.doc-nav-btn.next { text-align: right; margin-left: auto; }
 
 /* 우측 목차 (TOC) */
 .toc {

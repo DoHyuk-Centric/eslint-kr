@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 export function Main() {
   return (
-    <main>
+    <>
       {/* 히어로 */}
       <section className="hero">
         <h1>ESLint 한국어 가이드</h1>
@@ -10,12 +12,13 @@ export function Main() {
           가이드입니다.
         </p>
         <div className="hero-btns">
-          <a href="docs/getting-started/01-intro.html" className="btn btn-primary">
+          <Link to="/intro" className="btn btn-primary">
             시작하기
-          </a>
+          </Link>
           <a
-            href="https://github.com"
+            href="https://github.com/DoHyuk-Centric/eslint-kr"
             target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-secondary"
           >
             GitHub에서 기여하기
@@ -34,13 +37,13 @@ export function Main() {
       <section className="docs-section">
         <h2>시작하기</h2>
         <div className="card-grid">
-          <a href="docs/getting-started/01-intro.html" className="card">
+          <Link to="/intro" className="card">
             <div className="card-num">01</div>
             <div className="card-title">ESLint란?</div>
             <div className="card-desc">
               ESLint의 개념, 왜 써야 하는지, Prettier와의 차이
             </div>
-          </a>
+          </Link>
           <a href="#" className="card disabled">
             <div className="card-num">02</div>
             <div className="card-title">설치하기</div>
@@ -83,6 +86,6 @@ export function Main() {
           </a>
         </div>
       </section>
-    </main>
+    </>
   );
 }
