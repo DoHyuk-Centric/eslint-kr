@@ -44,13 +44,13 @@ export function Main() {
               ESLint의 개념, 왜 써야 하는지, Prettier와의 차이
             </div>
           </Link>
-          <a href="#" className="card disabled">
+          <Link to="/install" className="card">
             <div className="card-num">02</div>
             <div className="card-title">설치하기</div>
             <div className="card-desc">
-              npm으로 설치하고 VS Code 익스텐션 연결하기
+              ESLint 설치부터 초기설정, 빠르게 시작하기
             </div>
-          </a>
+          </Link>
           <a href="#" className="card disabled">
             <div className="card-num">03</div>
             <div className="card-title">첫 설정</div>
