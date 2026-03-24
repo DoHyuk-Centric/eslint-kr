@@ -1,6 +1,6 @@
 export function Main() {
   return (
-    <main>
+    <>
       {/* 히어로 */}
       <section className="hero">
         <h1>ESLint 한국어 가이드</h1>
@@ -83,6 +83,6 @@ export function Main() {
           </a>
         </div>
       </section>
-    </main>
+    </>
   );
 }

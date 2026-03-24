@@ -1,19 +1,16 @@
-import { Header } from "./components/Header";
-import { Main } from "./components/Main";
-import { Aside } from "./components/Aside";
-import { Footer } from "./components/Footer";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Intro from "./pages/Intro";
+import {Main} from "./components/Main";
 
 function App() {
   return (
-    <>
-      <Header />
-      <div className="layout">
-        <Aside />
-        <Main />
-      </div>
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Main />} />
+        <Route path="intro" element={<Intro />} />
+      </Route>
+    </Routes>
   );
 }
 
