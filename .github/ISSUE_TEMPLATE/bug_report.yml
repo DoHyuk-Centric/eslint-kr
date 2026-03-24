@@ -1,0 +1,76 @@
+name: Bug report
+description: 버그 또는 잘못된 동작을 제보합니다.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        버그를 제보해주셔서 감사합니다.
+        아래 내용을 가능한 한 자세히 작성해주세요.
+
+  - type: input
+    id: summary
+    attributes:
+      label: 요약
+      description: 어떤 문제가 발생했는지 한 줄로 설명해주세요.
+      placeholder: 예) 특정 문서 페이지에서 번역이 깨져 보입니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 방법
+      description: 문제를 재현하는 과정을 순서대로 작성해주세요.
+      placeholder: |
+        1. 특정 페이지로 이동
+        2. 특정 메뉴 클릭
+        3. 문제 발생 확인
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대한 동작
+      description: 원래 어떻게 동작해야 하는지 작성해주세요.
+      placeholder: 예) 번역 문장이 정상적으로 표시되어야 합니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 동작
+      description: 실제로 어떤 문제가 발생했는지 작성해주세요.
+      placeholder: 예) 문장이 잘리거나 영어 원문이 노출됩니다.
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: 관련 페이지 / 경로
+      description: 문제가 발생한 페이지 주소나 파일 경로를 적어주세요.
+      placeholder: 예) /docs/getting-started/intro
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 스크린샷 / 참고 자료
+      description: 가능하다면 이미지나 참고 자료를 첨부해주세요.
+      placeholder: 스크린샷, 로그, 콘솔 에러 등을 적어주세요.
+
+  - type: input
+    id: environment
+    attributes:
+      label: 실행 환경
+      description: 브라우저, OS 등 환경 정보를 적어주세요.
+      placeholder: 예) Chrome 146 / Windows 11
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 추가 정보
+      description: 그 외 참고할 내용이 있다면 작성해주세요.
