@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Intro() {
   return (
-    <>
+    <div className="main-content">
       <nav className="breadcrumb">
         <NavLink to="/">ESLint-KO</NavLink>
         <span className="breadcrumb-sep">›</span>
@@ -55,6 +55,6 @@ export default function Intro() {
           </NavLink>
         </nav>
       </article>
-    </>
+    </div>
   );
 }
