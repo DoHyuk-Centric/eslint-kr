@@ -1,16 +1,26 @@
-import { defineConfig } from "eslint/config";
-import js from "@eslint/js";
+import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
-	{
-		files: ["**/*.js"],
-		plugins: {
-			js,
-		},
-		extends: ["js/recommended"],
-		rules: {
-			"no-unused-vars": "warn",
-			"no-undef": "warn",
-		},
-	},
+  globalIgnores(["dist/", "coverage/"]),
+
+  {
+    files: ["**/*.js"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: {
+        console: "readonly",
+      },
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: "error",
+    },
+    rules: {
+      "no-unused-vars": "error",
+      "no-undef": "error",
+      eqeqeq: "error",
+      "prefer-const": "warn",
+      "no-console": "off",
+    },
+  },
 ]);

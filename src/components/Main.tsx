@@ -51,13 +51,13 @@ export function Main() {
               ESLint 설치부터 초기설정, 빠르게 시작하기
             </div>
           </Link>
-          <a href="#" className="card disabled">
+          <Link to="/setting" className="card">
             <div className="card-num">03</div>
             <div className="card-title">첫 설정</div>
             <div className="card-desc">
               eslint.config.mjs 파일 처음 만들어보기
             </div>
-          </a>
+          </Link>
         </div>
       </section>
 
