@@ -8,7 +8,7 @@ export function Aside(){
             <NavLink to="/" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>홈</NavLink>
             <NavLink to="/intro" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>ESLint란?</NavLink>
             <NavLink to="/install" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>설치하기</NavLink>
-            <a href="docs/getting-started/03-first-config.html" className="sidebar-link disabled">설정<span className="badge-wip">작성 중</span></a>
+            <NavLink to="/setting" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>설정</NavLink>
             </div>
             <div className="sidebar-section">
             <div className="sidebar-section-title">핵심 개념</div>
