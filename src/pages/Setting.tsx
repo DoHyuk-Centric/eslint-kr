@@ -229,7 +229,7 @@ export default function Setting() {
           <NavLink to="/" className="doc-nav-btn">
             ← 홈으로
           </NavLink>
-          <NavLink to="/install" className="doc-nav-btn next">
+          <NavLink to="/rules" className="doc-nav-btn next">
             다음 →
           </NavLink>
         </nav>
