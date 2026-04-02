@@ -12,7 +12,7 @@ export function Aside(){
             </div>
             <div className="sidebar-section">
             <div className="sidebar-section-title">핵심 개념</div>
-            <a href="#" className="sidebar-link disabled">규칙 (Rules) <span className="badge-wip">작성 중</span></a>
+             <NavLink to="/rules" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>규칙 (Rules)</NavLink>
             <a href="#" className="sidebar-link disabled">설정 파일 <span className="badge-wip">작성 중</span></a>
             <a href="#" className="sidebar-link disabled">파서 (Parser) <span className="badge-wip">작성 중</span></a>
             <a href="#" className="sidebar-link disabled">플러그인 <span className="badge-wip">작성 중</span></a>

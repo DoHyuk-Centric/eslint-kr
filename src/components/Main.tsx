@@ -65,7 +65,7 @@ export function Main() {
       <section className="docs-section" style={{ paddingTop: 0 }}>
         <h2>핵심 개념</h2>
         <div className="card-grid">
-          <a href="#" className="card disabled">
+          <a href="/rules" className="card">
             <div className="card-num">04</div>
             <div className="card-title">규칙 (Rules)</div>
             <div className="card-desc">실무에서 꼭 알아야 할 규칙 모음</div>
