@@ -65,18 +65,18 @@ export function Main() {
       <section className="docs-section" style={{ paddingTop: 0 }}>
         <h2>핵심 개념</h2>
         <div className="card-grid">
-          <a href="/rules" className="card">
+          <Link to="/rules" className="card">
             <div className="card-num">04</div>
             <div className="card-title">규칙 (Rules)</div>
             <div className="card-desc">실무에서 꼭 알아야 할 규칙 모음</div>
-          </a>
-          <a href="#" className="card disabled">
+          </Link>
+          <Link to="/settingFile" className="card">
             <div className="card-num">05</div>
             <div className="card-title">설정 파일 완전 정복</div>
             <div className="card-desc">
               extends, plugins, env 개념 완전 이해
             </div>
-          </a>
+          </Link>
           <a href="#" className="card disabled">
             <div className="card-num">06</div>
             <div className="card-title">플러그인 활용</div>
