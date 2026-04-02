@@ -226,8 +226,8 @@ export default function Setting() {
         </ul>
 
         <nav className="doc-nav">
-          <NavLink to="/" className="doc-nav-btn">
-            ← 홈으로
+          <NavLink to="/install" className="doc-nav-btn">
+            ← 이전
           </NavLink>
           <NavLink to="/rules" className="doc-nav-btn next">
             다음 →

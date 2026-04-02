@@ -839,8 +839,8 @@ export default [
         <NavLink to="/rulesReference">codeRules Reference</NavLink>
 
         <nav className="doc-nav">
-          <NavLink to="/" className="doc-nav-btn">
-            ← 홈으로
+          <NavLink to="/setting" className="doc-nav-btn">
+            ← 이전
           </NavLink>
           <NavLink to="/settingFile" className="doc-nav-btn next">
             다음 →
