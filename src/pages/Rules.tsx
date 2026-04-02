@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function Intro() {
+export default function Rules() {
   return (
     <div className="main-content">
       <nav className="breadcrumb">
@@ -842,7 +842,7 @@ export default [
           <NavLink to="/" className="doc-nav-btn">
             ← 홈으로
           </NavLink>
-          <NavLink to="/install" className="doc-nav-btn next">
+          <NavLink to="/settingFile" className="doc-nav-btn next">
             다음 →
           </NavLink>
         </nav>
