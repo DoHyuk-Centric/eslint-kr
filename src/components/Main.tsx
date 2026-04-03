@@ -77,8 +77,15 @@ export function Main() {
               extends, plugins, env 개념 완전 이해
             </div>
           </Link>
-          <a href="#" className="card disabled">
+          <Link to="/parser" className="card">
             <div className="card-num">06</div>
+            <div className="card-title">파서 (Parser)</div>
+            <div className="card-desc">
+              Lint 검사간의 AST와, espree parser에 대해서
+            </div>
+          </Link>
+          <a href="#" className="card disabled">
+            <div className="card-num">07</div>
             <div className="card-title">플러그인 활용</div>
             <div className="card-desc">
               React, TypeScript 플러그인 실전 적용
