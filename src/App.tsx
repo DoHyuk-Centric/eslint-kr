@@ -6,6 +6,7 @@ import Setting from "./pages/Setting"
 import Rules from "./pages/Rules"
 import RulesReference from "./pages/RulesReference"
 import SettingFile from "./pages/SettingFile"
+import Parser from "./pages/Parser"
 import { Main } from "./components/Main";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="rules" element={<Rules />} />
         <Route path="rulesReference" element={<RulesReference />} />
         <Route path="settingFile" element={<SettingFile />} />
+        <Route path="parser" element={<Parser />} />
       </Route>
     </Routes>
   );
