@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 export function Logo() {
   return (
-    <a href="/" className="site-logo">
+    <Link to="/" className="site-logo">
       ESLint<span>-KR</span>
-    </a>
+    </Link>
   );
 }

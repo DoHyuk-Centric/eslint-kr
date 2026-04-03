@@ -942,15 +942,6 @@ export default function RulesReference() {
           <li><code>valid-jsdoc</code> — 제거됨</li>
           <li><code>require-jsdoc</code> — 제거됨</li>
         </ul>
-
-        <nav className="doc-nav">
-          <NavLink to="/command-line-interface" className="doc-nav-btn">
-            ← 이전
-          </NavLink>
-          <NavLink to="/mcp" className="doc-nav-btn next">
-            다음 →
-          </NavLink>
-        </nav>
       </article>
     </div>
   );

@@ -836,7 +836,7 @@ export default [
         </ul>
 
         <h2>더 많은 규칙 참조</h2>
-        <NavLink to="/rulesReference">codeRules Reference</NavLink>
+        <NavLink to="/rulesReference">Rules Reference</NavLink>
 
         <nav className="doc-nav">
           <NavLink to="/setting" className="doc-nav-btn">
