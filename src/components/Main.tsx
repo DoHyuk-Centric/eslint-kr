@@ -84,13 +84,13 @@ export function Main() {
               Lint 검사간의 AST와, espree parser에 대해서
             </div>
           </Link>
-          <a href="#" className="card disabled">
+          <Link to="/plugin" className="card">
             <div className="card-num">07</div>
             <div className="card-title">플러그인 활용</div>
             <div className="card-desc">
               React, TypeScript 플러그인 실전 적용
             </div>
-          </a>
+          </Link>
         </div>
       </section>
     </>
