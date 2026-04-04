@@ -7,6 +7,8 @@ import Rules from "./pages/Rules"
 import RulesReference from "./pages/RulesReference"
 import SettingFile from "./pages/SettingFile"
 import Parser from "./pages/Parser"
+import Plugin from "./pages/Plugin"
+import PluginDistribution from "./pages/PluginDistribution"
 import { Main } from "./components/Main";
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Route path="rulesReference" element={<RulesReference />} />
         <Route path="settingFile" element={<SettingFile />} />
         <Route path="parser" element={<Parser />} />
+        <Route path="plugin" element={<Plugin />} />
+        <Route path="PluginDistribution" element={<PluginDistribution />} />
       </Route>
     </Routes>
   );

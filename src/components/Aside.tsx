@@ -15,7 +15,7 @@ export function Aside(){
              <NavLink to="/rules" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>규칙 (Rules)</NavLink>
              <NavLink to="/settingFile" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>설정 파일</NavLink>
              <NavLink to="/parser" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>파서 (Parser)</NavLink>
-            <a href="#" className="sidebar-link disabled">플러그인 <span className="badge-wip">작성 중</span></a>
+             <NavLink to="/plugin" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>플러그인 (Plugin)</NavLink>
             </div>
             <div className="sidebar-section">
             <div className="sidebar-section-title">실전 가이드</div>
