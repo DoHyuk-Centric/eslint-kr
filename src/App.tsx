@@ -9,6 +9,7 @@ import SettingFile from "./pages/SettingFile"
 import Parser from "./pages/Parser"
 import Plugin from "./pages/Plugin"
 import PluginDistribution from "./pages/PluginDistribution"
+import Prettier from "./pages/Prettier"
 import { Main } from "./components/Main";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="parser" element={<Parser />} />
         <Route path="plugin" element={<Plugin />} />
         <Route path="PluginDistribution" element={<PluginDistribution />} />
+        <Route path="prettier" element={<Prettier />} />
       </Route>
     </Routes>
   );

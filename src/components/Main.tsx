@@ -88,7 +88,14 @@ export function Main() {
             <div className="card-num">07</div>
             <div className="card-title">플러그인 활용</div>
             <div className="card-desc">
-              React, TypeScript 플러그인 실전 적용
+              규칙, 설정, 프로세서를 묶는 플러그인 구조 이해
+            </div>
+          </Link>
+          <Link to="/plugin" className="card">
+            <div className="card-num">08</div>
+            <div className="card-title">프리티어와 함께 쓰기</div>
+            <div className="card-desc">
+              ESLint를 Prettier와 함께 사용하는 방법
             </div>
           </Link>
         </div>
