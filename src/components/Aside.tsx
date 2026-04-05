@@ -16,17 +16,11 @@ export function Aside(){
              <NavLink to="/settingFile" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>설정 파일</NavLink>
              <NavLink to="/parser" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>파서 (Parser)</NavLink>
              <NavLink to="/plugin" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>플러그인 (Plugin)</NavLink>
+             <NavLink to="/prettier" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>Prettier와 함께 쓰기</NavLink>
             </div>
             <div className="sidebar-section">
-            <div className="sidebar-section-title">실전 가이드</div>
-            <a href="#" className="sidebar-link disabled">React 프로젝트 <span className="badge-wip">작성 중</span></a>
-            <a href="#" className="sidebar-link disabled">TypeScript 설정 <span className="badge-wip">작성 중</span></a>
-            <a href="#" className="sidebar-link disabled">Prettier와 함께 쓰기 <span className="badge-wip">작성 중</span></a>
-            </div>
-            <div className="sidebar-section">
-            <div className="sidebar-section-title">기여하기</div>
-            <a href="#" className="sidebar-link">기여 가이드</a>
-            <a href="#" className="sidebar-link">용어 통일 기준</a>
+                <div className="sidebar-section-title">기여하기</div>
+                <a href="#" className="sidebar-link">기여 가이드</a>
             </div>
         </aside>
     )
