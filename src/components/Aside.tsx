@@ -18,10 +18,6 @@ export function Aside(){
              <NavLink to="/plugin" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>플러그인 (Plugin)</NavLink>
              <NavLink to="/prettier" className={({ isActive }) => "sidebar-link" + (isActive ? " active" : "")} end>Prettier와 함께 쓰기</NavLink>
             </div>
-            <div className="sidebar-section">
-                <div className="sidebar-section-title">기여하기</div>
-                <a href="#" className="sidebar-link">기여 가이드</a>
-            </div>
         </aside>
     )
 }
