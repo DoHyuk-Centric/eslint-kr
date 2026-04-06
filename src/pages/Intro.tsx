@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import CopyableCodeBlock from "../components/ui/CopyableCodeBlock";
 
 const exampleCode = `function greet(name) {
   console.log("Hello, " + userName);
@@ -7,16 +8,6 @@ const exampleCode = `function greet(name) {
 greet("김린트");`;
 
 export default function Intro() {
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(exampleCode);
-      alert("코드가 복사되었습니다.");
-    } catch (error) {
-      console.error(error);
-      alert("복사에 실패했습니다.");
-    }
-  };
-
   return (
     <div className="main-content">
       <nav className="breadcrumb">
@@ -56,31 +47,21 @@ export default function Intro() {
           <strong> 협업 시 일관성 확보</strong>에 도움을 주는 도구입니다.
         </p>
 
-        <div className="code-block">
-          <div className="code-block-header">
-            <span className="code-lang">JavaScript</span>
-            <button className="copy-btn" onClick={handleCopy}>
-              복사
-            </button>
-          </div>
-          <pre>
-            <code>
-              <span className="tk-kw">function</span>{" "}
-              <span className="tk-fn">greet</span>(
-              <span className="tk-kw tk-err">name</span>) {"{"}
-              {"\n  "}
-              <span className="tk-kw">console</span>.log(
-              <span className="tk-str">"Hello, "</span> +{" "}
-              <span className="tk-key tk-err">userName</span>
-              );
-              {"\n}"}
-              {"\n\n"}
-              <span className="tk-fn">greet(</span>
-              <span className="tk-str">"김린트"</span>
-              <span className="tk-fn">)</span>;
-            </code>
-          </pre>
-        </div>
+        <CopyableCodeBlock lang="JavaScript" code={exampleCode}>
+          <span className="tk-kw">function</span>{" "}
+          <span className="tk-fn">greet</span>(
+          <span className="tk-kw tk-err">name</span>) {"{"}
+          {"\n  "}
+          <span className="tk-kw">console</span>.log(
+          <span className="tk-str">"Hello, "</span> +{" "}
+          <span className="tk-key tk-err">userName</span>
+          );
+          {"\n}"}
+          {"\n\n"}
+          <span className="tk-fn">greet(</span>
+          <span className="tk-str">"김린트"</span>
+          <span className="tk-fn">)</span>;
+        </CopyableCodeBlock>
 
         <p>
           위 코드에서는 <code>name</code> 매개변수를 받았지만 실제로는

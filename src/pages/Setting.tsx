@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import CopyableCodeBlock from "../components/ui/CopyableCodeBlock";
 
 const eslintconfigjsFastOptions = `import { defineConfig, globalIgnores } from "eslint/config";
 
@@ -28,15 +29,6 @@ export default defineConfig([
 ]);`;
 
 export default function Setting() {
-  const handleCopy = async (code: string) => {
-    try {
-      await navigator.clipboard.writeText(code);
-      alert("코드가 복사되었습니다.");
-    } catch (error) {
-      console.error(error);
-      alert("복사에 실패했습니다.");
-    }
-  };
   return (
     <div className="main-content">
       <nav className="breadcrumb">
@@ -54,72 +46,58 @@ export default function Setting() {
       <article className="article">
         <h2>빠른 시작 설정</h2>
         <p>초보자에겐 다음과 같은 시작 설정을 추천합니다.</p>
-        <div className="code-block">
-          <div className="code-block-header">
-            <span className="code-lang">JavaScript</span>
-            <button
-              className="copy-btn"
-              onClick={() => handleCopy(eslintconfigjsFastOptions)}
-            >
-              복사
-            </button>
-          </div>
-          <pre>
-            <code>
-              <span className="tk-comment">// eslint.config.js</span>
-              {"\n"}
-              <span className="tk-kw-import">import</span> {"{"}{" "}
-              <span className="tk-key">defineConfig, globalIgnores</span> {"}"}{" "}
-              <span className="tk-kw-import">from</span>{" "}
-              <span className="tk-str">"eslint/config"</span>;{"\n\n"}
-              <span className="tk-kw-import">export</span>{" "}
-              <span className="tk-kw-import">default</span>{" "}
-              <span className="tk-fn">defineConfig</span>([{"\n  "}
-              <span className="tk-fn">globalIgnores</span>([
-              <span className="tk-str">"dist/"</span>,{" "}
-              <span className="tk-str">"coverage/"</span>
-              ]),{"\n\n  "}
-              {"{"}
-              {"\n    "}
-              <span className="tk-key">files</span>: [
-              <span className="tk-str">"**/*.js"</span>],
-              {"\n    "}
-              <span className="tk-key">languageOptions</span>: {"{"}
-              {"\n      "}
-              <span className="tk-key">ecmaVersion</span>:{" "}
-              <span className="tk-str">"latest"</span>,{"\n      "}
-              <span className="tk-key">sourceType</span>:{" "}
-              <span className="tk-str">"module"</span>,{"\n      "}
-              <span className="tk-key">globals</span>: {"{"}
-              {"\n        "}
-              <span className="tk-key">console</span>:{" "}
-              <span className="tk-str">"readonly"</span>,{"\n      "}
-              {"}"},{"\n    "}
-              {"}"},{"\n    "}
-              <span className="tk-key">linterOptions</span>: {"{"}
-              {"\n      "}
-              <span className="tk-key">
-                reportUnusedDisableDirectives
-              </span>: <span className="tk-str">"error"</span>,{"\n    "}
-              {"}"},{"\n    "}
-              <span className="tk-key">rules</span>: {"{"}
-              {"\n      "}
-              <span className="tk-str">"no-unused-vars"</span>:{" "}
-              <span className="tk-str">"error"</span>,{"\n      "}
-              <span className="tk-str">"no-undef"</span>:{" "}
-              <span className="tk-str">"error"</span>,{"\n      "}
-              <span className="tk-key">eqeqeq</span>:{" "}
-              <span className="tk-str">"error"</span>,{"\n      "}
-              <span className="tk-str">"prefer-const"</span>:{" "}
-              <span className="tk-str">"warn"</span>,{"\n      "}
-              <span className="tk-str">"no-console"</span>:{" "}
-              <span className="tk-str">"off"</span>,{"\n    "}
-              {"}"},{"\n  "}
-              {"}"},{"\n"}
-              ]);
-            </code>
-          </pre>
-        </div>
+        <CopyableCodeBlock lang="JavaScript" code={eslintconfigjsFastOptions}>
+          <span className="tk-comment">// eslint.config.js</span>
+          {"\n"}
+          <span className="tk-kw-import">import</span> {"{"}{" "}
+          <span className="tk-key">defineConfig, globalIgnores</span> {"}"}{" "}
+          <span className="tk-kw-import">from</span>{" "}
+          <span className="tk-str">"eslint/config"</span>;{"\n\n"}
+          <span className="tk-kw-import">export</span>{" "}
+          <span className="tk-kw-import">default</span>{" "}
+          <span className="tk-fn">defineConfig</span>([{"\n  "}
+          <span className="tk-fn">globalIgnores</span>([
+          <span className="tk-str">"dist/"</span>,{" "}
+          <span className="tk-str">"coverage/"</span>
+          ]),{"\n\n  "}
+          {"{"}
+          {"\n    "}
+          <span className="tk-key">files</span>: [
+          <span className="tk-str">"**/*.js"</span>],
+          {"\n    "}
+          <span className="tk-key">languageOptions</span>: {"{"}
+          {"\n      "}
+          <span className="tk-key">ecmaVersion</span>:{" "}
+          <span className="tk-str">"latest"</span>,{"\n      "}
+          <span className="tk-key">sourceType</span>:{" "}
+          <span className="tk-str">"module"</span>,{"\n      "}
+          <span className="tk-key">globals</span>: {"{"}
+          {"\n        "}
+          <span className="tk-key">console</span>:{" "}
+          <span className="tk-str">"readonly"</span>,{"\n      "}
+          {"}"},{"\n    "}
+          {"}"},{"\n    "}
+          <span className="tk-key">linterOptions</span>: {"{"}
+          {"\n      "}
+          <span className="tk-key">reportUnusedDisableDirectives</span>:{" "}
+          <span className="tk-str">"error"</span>,{"\n    "}
+          {"}"},{"\n    "}
+          <span className="tk-key">rules</span>: {"{"}
+          {"\n      "}
+          <span className="tk-str">"no-unused-vars"</span>:{" "}
+          <span className="tk-str">"error"</span>,{"\n      "}
+          <span className="tk-str">"no-undef"</span>:{" "}
+          <span className="tk-str">"error"</span>,{"\n      "}
+          <span className="tk-key">eqeqeq</span>:{" "}
+          <span className="tk-str">"error"</span>,{"\n      "}
+          <span className="tk-str">"prefer-const"</span>:{" "}
+          <span className="tk-str">"warn"</span>,{"\n      "}
+          <span className="tk-str">"no-console"</span>:{" "}
+          <span className="tk-str">"off"</span>,{"\n    "}
+          {"}"},{"\n  "}
+          {"}"},{"\n"}
+          ]);
+        </CopyableCodeBlock>
         <p>
           <code>globalIgnores</code>
           <br />
