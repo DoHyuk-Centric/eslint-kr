@@ -432,7 +432,7 @@ export default defineConfig([
           <NavLink to="/parser" className="doc-nav-btn">
             ← 이전
           </NavLink>
-          <NavLink to="/reactProject" className="doc-nav-btn next">
+          <NavLink to="/prettier" className="doc-nav-btn next">
             다음 →
           </NavLink>
         </nav>
