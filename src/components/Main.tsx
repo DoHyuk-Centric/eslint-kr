@@ -89,7 +89,7 @@ export function Main() {
               규칙, 설정, 프로세서를 묶는 플러그인 구조 이해
             </div>
           </Link>
-          <Link to="/plugin" className="card">
+          <Link to="/prettier" className="card">
             <div className="card-num">08</div>
             <div className="card-title">프리티어와 함께 쓰기</div>
             <div className="card-desc">
