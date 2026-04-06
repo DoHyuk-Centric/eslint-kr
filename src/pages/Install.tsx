@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import CodeBlock from "../components/ui/CodeBlock";
+import CopyableCodeBlock from "../components/ui/CopyableCodeBlock";
 
 const eslintconfigjsExample = `import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
@@ -21,26 +21,6 @@ export default defineConfig([
 `;
 
 export default function Install() {
-  const [toast, setToast] = useState<string | null>(null);
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(eslintconfigjsExample);
-
-      setToast("코드가 복사되었습니다.");
-
-      setTimeout(() => {
-        setToast(null);
-      }, 2000);
-    } catch (error) {
-      console.error(error);
-
-      setToast("복사에 실패했습니다.");
-
-      setTimeout(() => {
-        setToast(null);
-      }, 2000);
-    }
-  };
   return (
     <div className="main-content">
       <nav className="breadcrumb">
@@ -201,81 +181,71 @@ touch eslint.config.js`}</code>
               규칙, 사용자 설정, 플러그인 등을 추가하는 방법은{" "}
               <NavLink to={"/"}>ESLint 설정 문서</NavLink>를 참조해주세요.
             </p>
-            <div className="code-block">
-              <div className="code-block-header">
-                <span className="code-lang">JavaScript</span>
-                <button className="copy-btn" onClick={handleCopy}>
-                  복사
-                </button>
-              </div>
-              <pre>
-                <code>
-                  <span className="tk-kw-import">import</span> {"{ "}
-                  <span className="tk-fn">defineConfig</span>
-                  {" } "}
-                  <span className="tk-kw-import">from</span>{" "}
-                  <span className="tk-str">"eslint/config"</span>
-                  {";"}
-                  {"\n"}
-                  <span className="tk-kw-import">import</span>{" "}
-                  <span className="tk-key">js</span>{" "}
-                  <span className="tk-kw-import">from</span>{" "}
-                  <span className="tk-str">"@eslint/js"</span>
-                  {";"}
-                  {"\n\n"}
-                  <span className="tk-kw">export</span>{" "}
-                  <span className="tk-kw">default</span>{" "}
-                  <span className="tk-fn">defineConfig</span>
-                  {"(["}
-                  {"\n"}
-                  {"  {"}
-                  {"\n"}
-                  {"    "}
-                  <span className="tk-prop">files</span>
-                  {": ["}
-                  <span className="tk-str">"**/*.js"</span>
-                  {"],"}
-                  {"\n"}
-                  {"    "}
-                  <span className="tk-prop">plugins</span>
-                  {": {"}
-                  {"\n"}
-                  {"      "}
-                  <span className="tk-key">js</span>
-                  {","}
-                  {"\n"}
-                  {"    },"}
-                  {"\n"}
-                  {"    "}
-                  <span className="tk-prop">extends</span>
-                  {": ["}
-                  <span className="tk-str">"js/recommended"</span>
-                  {"],"}
-                  {"\n"}
-                  {"    "}
-                  <span className="tk-prop">rules</span>
-                  {": {"}
-                  {"\n"}
-                  {"      "}
-                  <span className="tk-str">"no-unused-vars"</span>
-                  {": "}
-                  <span className="tk-str">"warn"</span>
-                  {","}
-                  {"\n"}
-                  {"      "}
-                  <span className="tk-str">"no-undef"</span>
-                  {": "}
-                  <span className="tk-str">"warn"</span>
-                  {","}
-                  {"\n"}
-                  {"    },"}
-                  {"\n"}
-                  {"  },"}
-                  {"\n"}
-                  {"]);"}
-                </code>
-              </pre>
-            </div>
+            <CopyableCodeBlock lang="JavaScript" code={eslintconfigjsExample}>
+              <span className="tk-kw-import">import</span> {"{ "}
+              <span className="tk-fn">defineConfig</span>
+              {" } "}
+              <span className="tk-kw-import">from</span>{" "}
+              <span className="tk-str">"eslint/config"</span>
+              {";"}
+              {"\n"}
+              <span className="tk-kw-import">import</span>{" "}
+              <span className="tk-key">js</span>{" "}
+              <span className="tk-kw-import">from</span>{" "}
+              <span className="tk-str">"@eslint/js"</span>
+              {";"}
+              {"\n\n"}
+              <span className="tk-kw">export</span>{" "}
+              <span className="tk-kw">default</span>{" "}
+              <span className="tk-fn">defineConfig</span>
+              {"(["}
+              {"\n"}
+              {"  {"}
+              {"\n"}
+              {"    "}
+              <span className="tk-prop">files</span>
+              {": ["}
+              <span className="tk-str">"**/*.js"</span>
+              {"],"}
+              {"\n"}
+              {"    "}
+              <span className="tk-prop">plugins</span>
+              {": {"}
+              {"\n"}
+              {"      "}
+              <span className="tk-key">js</span>
+              {","}
+              {"\n"}
+              {"    },"}
+              {"\n"}
+              {"    "}
+              <span className="tk-prop">extends</span>
+              {": ["}
+              <span className="tk-str">"js/recommended"</span>
+              {"],"}
+              {"\n"}
+              {"    "}
+              <span className="tk-prop">rules</span>
+              {": {"}
+              {"\n"}
+              {"      "}
+              <span className="tk-str">"no-unused-vars"</span>
+              {": "}
+              <span className="tk-str">"warn"</span>
+              {","}
+              {"\n"}
+              {"      "}
+              <span className="tk-str">"no-undef"</span>
+              {": "}
+              <span className="tk-str">"warn"</span>
+              {","}
+              {"\n"}
+              {"    },"}
+              {"\n"}
+              {"  },"}
+              {"\n"}
+              {"]);"}
+            </CopyableCodeBlock>
           </li>
           <li>
             <h3>4. ESLint CLI를 사용하여 검사</h3>
@@ -299,9 +269,6 @@ touch eslint.config.js`}</code>
           </NavLink>
         </nav>
       </article>
-      <div className="toast-container">
-        {toast && <div className="toast">{toast}</div>}
-      </div>
     </div>
   );
 }
