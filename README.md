@@ -49,35 +49,6 @@ ESLint 공식 문서는 영어로만 제공됩니다. 이 프로젝트는 한국
 
 ---
 
-## 🚀 로컬 실행 방법
-
-```bash
-# 1. 저장소 클론
-git clone https://github.com/DoHyuk-Centric/eslint-kr.git
-cd eslint-kr
-
-# 2. develop 브랜치로 전환 (개발 브랜치)
-git checkout develop
-
-# 3. 의존성 설치
-npm install
-
-# 4. 개발 서버 실행
-npm run dev
-```
-
-브라우저에서 `http://localhost:5173` 접속
-
-### 기타 스크립트
-
-```bash
-npm run build    # 프로덕션 빌드 (tsc -b && vite build)
-npm run preview  # 빌드 결과물 로컬 미리보기
-npm run lint     # ESLint 검사
-```
-
----
-
 ## 📁 프로젝트 구조
 
 ```
