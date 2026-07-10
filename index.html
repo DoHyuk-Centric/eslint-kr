@@ -10,6 +10,29 @@
       rel="stylesheet"
     />
     <link rel="icon" href="%BASE_URL%favicon.svg" />
+    <!--
+      404.html이 딥링크를 '/?/rules' 형태로 인코딩해 보낸 경우,
+      React Router가 초기화되기 전에 원래 경로(/eslint-kr/rules)로 복원한다.
+      참고: https://github.com/rafgraph/spa-github-pages
+    -->
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash,
+          );
+        }
+      })(window.location);
+    </script>
     <style>
       /* 랜딩 전용 스타일 */
       .hero {
